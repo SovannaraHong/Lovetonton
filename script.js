@@ -27,6 +27,7 @@ btnNo.addEventListener("click", () => {
   clickSoundCry.play();
   clickSound.pause();
   clickSound.currentTime = 0;
+  h1.textContent = "I'm Cry I'm so sad😭";
   btnYes.style.fontSize = `${fontsize}px`;
   img.src =
     "https://imgs.search.brave.com/7r5Jd8iobNABgAw12-oGaoS3Pdsyr9j_Yus8dFKxqKg/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS50ZW5vci5jb20v/a1owWFBzdnRxdzhB/QUFBai9jYXQtZmFy/c2ktc2FkLmdpZg.gif";
