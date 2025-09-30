@@ -3,21 +3,31 @@ const btnYes = document.querySelector("#btn-yes");
 const img = document.querySelector("#tonton");
 const h1 = document.querySelector("h1");
 const clickSound = document.querySelector("#clickSound");
+const clickSoundCry = document.querySelector("#cry");
 
+let padding = 10;
+let fontsize = 20;
 btnYes.addEventListener("click", () => {
-  h1.textContent = "Yehh Yehh i'm so happy love you too😭❤️";
-  clickSound.pause();
-  clickSound.currentTime = 3.13; // jump to 3.13s
+  h1.textContent = "Yehh Yehh I Love you so much😭❤️";
+  clickSound.currentTime = 0;
   clickSound.play();
+  clickSoundCry.pause();
+  clickSoundCry.currentTime = 0;
+  btnNo.disabled = true;
+  btnNo.style.opacity = "0.5";
+  btnNo.style.cursor = "not-allowed";
+
   img.src =
     "https://imgs.search.brave.com/-xV4JmaosreZVeKwwlvANYW0UqZurZanqrGxWPiDHJ4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9naWZk/Yi5jb20vaW1hZ2Vz/L2hpZ2gvZ29vZC1u/aWdodC1sb3ZlLXlv/dS1idW5ueS1jb3Vw/bGUtY2hlZWstaGVh/cnRzLTg1a2ttc2Nh/ajFpM2NyeXguZ2lm.gif";
+  btnNo.removeAttribute("id");
 });
+btnNo.addEventListener("click", () => {
+  fontsize += 10;
+  clickSoundCry.currentTime = 0;
+  clickSoundCry.play();
+  clickSound.pause();
+  clickSound.currentTime = 0;
+  btnYes.style.fontSize = `${fontsize}px`;
 
-btnNo.addEventListener("mouseover", () => {
-  btnNo.classList.add("active");
-  const x = Math.random() * (window.innerWidth - btnNo.offsetWidth);
-  const y = Math.random() * (window.innerHeight - btnNo.offsetHeight);
-
-  btnNo.style.left = `${x}px`;
-  btnNo.style.top = `${y}px`;
+  btnNo.style.fontSize = `${padding}px`;
 });
